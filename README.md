@@ -1,3 +1,5 @@
+![Project Preview](./image_2026-07-23_122823300.png)
+
 # Kane's Retro Hub
 
 A Windows 98-inspired homepage that links to GitHub projects and uses modular CSS and JavaScript.
