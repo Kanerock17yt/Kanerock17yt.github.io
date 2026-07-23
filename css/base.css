@@ -1,0 +1,29 @@
+/* base.css */
+:root {
+    --bg-teal: #008080;
+    --bg-window: #c0c0c0;
+    --bg-panel: #ffffff;
+    --border-light: #ffffff;
+    --border-dark: #808080;
+    --text-primary: #000000;
+    --text-muted: #555555;
+    --accent-blue: #1084d0;
+    --accent-dark: #000080;
+}
+
+body {
+    background-color: var(--bg-teal);
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+button:focus, .win98-start-item:focus {
+    outline: 1px dashed var(--accent-dark);
+}

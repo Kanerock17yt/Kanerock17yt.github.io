@@ -1,0 +1,12 @@
+/* variables.css */
+:root {
+    --bg-teal: #008080;
+    --bg-window: #c0c0c0;
+    --bg-panel: #ffffff;
+    --border-light: #ffffff;
+    --border-dark: #808080;
+    --text-primary: #000000;
+    --text-muted: #555555;
+    --accent-blue: #1084d0;
+    --accent-dark: #000080;
+}

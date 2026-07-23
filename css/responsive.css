@@ -1,0 +1,26 @@
+/* responsive.css */
+@media (max-width: 900px) {
+    .window {
+        width: calc(100vw - 40px);
+        left: 10px !important;
+        right: 10px !important;
+        max-width: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .desktop {
+        height: calc(100vh - 56px);
+        padding: 6px;
+    }
+
+    .win98-taskbar {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .taskbar-tabs-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+}

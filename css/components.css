@@ -1,0 +1,29 @@
+/* components.css */
+.project-list {
+    display: grid;
+    gap: 10px;
+}
+
+.project-card {
+    padding: 10px;
+    border: 1px solid #808080;
+    background: #f0f0f0;
+    box-shadow: inset 1px 1px #ffffff;
+}
+
+.project-card-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.project-card-description {
+    color: #333;
+}
+
+.project-card a {
+    color: var(--accent-dark);
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}

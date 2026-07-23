@@ -1,0 +1,19 @@
+/* typography.css */
+body {
+    font-family: 'MS Sans Serif', Tahoma, sans-serif, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #000;
+}
+
+p, li {
+    margin-bottom: 0.75rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5rem;
+}
+
+.project-card-title {
+    font-weight: bold;
+}

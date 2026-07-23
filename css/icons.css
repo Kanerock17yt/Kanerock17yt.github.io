@@ -1,0 +1,21 @@
+/* icons.css */
+.icon-folder {
+    color: #f0c040;
+}
+
+.icon-file {
+    color: #fff;
+}
+
+.icon-menu {
+    width: 14px;
+    text-align: center;
+}
+
+.icon-taskbar-projects {
+    color: #bfa130;
+}
+
+.icon-taskbar-about {
+    color: #666;
+}

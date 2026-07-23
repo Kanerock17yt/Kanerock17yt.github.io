@@ -1,0 +1,87 @@
+/* taskbar.css */
+.win98-taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 28px;
+    background: var(--bg-window);
+    border-top: 1px solid var(--border-light);
+    box-shadow: inset 0 1px #dfdfdf;
+    display: flex;
+    align-items: center;
+    padding: 2px 3px;
+    z-index: 9999;
+}
+
+.win98-start-btn {
+    height: 22px;
+    padding: 0 6px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    background: var(--bg-window);
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px var(--border-dark), inset 2px 2px var(--border-light);
+    border: none;
+    font-family: inherit;
+    font-size: 11px;
+}
+
+.win98-start-btn:active, .win98-start-btn.active {
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px var(--border-dark);
+    padding: 1px 5px 0 7px;
+}
+
+.win98-taskbar-divider {
+    width: 2px;
+    height: 18px;
+    background: var(--border-dark);
+    border-right: 1px solid var(--border-light);
+    margin: 0 2px;
+}
+
+.taskbar-tabs-container {
+    display: flex;
+    gap: 3px;
+    flex: 1;
+    overflow-x: auto;
+}
+
+.win98-taskbar-tab {
+    height: 22px;
+    width: 135px;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    background: var(--bg-window);
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px var(--border-dark), inset 2px 2px var(--border-light);
+    font-size: 11px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.win98-taskbar-tab.minimized {
+    color: #222;
+}
+
+.win98-taskbar-tab.active {
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px var(--border-dark);
+    background: #d4d4d4;
+    font-weight: bold;
+}
+
+.win98-tray {
+    height: 22px;
+    padding: 0 8px;
+    background: var(--bg-window);
+    box-shadow: inset -1px -1px #fff, inset 1px 1px var(--border-dark);
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    gap: 6px;
+}

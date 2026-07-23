@@ -1,0 +1,6 @@
+/* panels.css */
+.panel {
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 10px;
+}

@@ -1,0 +1,8 @@
+/* states.css */
+.is-active {
+    background: rgba(16, 132, 208, 0.15);
+}
+
+.is-hidden {
+    display: none !important;
+}

@@ -1,0 +1,13 @@
+/* forms.css */
+input, textarea, select {
+    border: 1px solid var(--border-dark);
+    background: var(--bg-panel);
+    color: var(--text-primary);
+    padding: 4px 6px;
+}
+
+button {
+    border: 1px solid var(--border-dark);
+    background: var(--bg-window);
+    padding: 4px 8px;
+}

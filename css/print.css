@@ -1,0 +1,11 @@
+/* print.css */
+@media print {
+    body {
+        background: #fff;
+        color: #000;
+    }
+
+    .desktop, .win98-taskbar, .win98-start-menu {
+        display: none;
+    }
+}

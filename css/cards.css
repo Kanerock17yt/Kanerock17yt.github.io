@@ -1,0 +1,12 @@
+/* cards.css */
+.card {
+    border: 1px solid #999;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 1px 1px 0 #ccc;
+}
+
+.card-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+}

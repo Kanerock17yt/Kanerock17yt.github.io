@@ -1,0 +1,9 @@
+/* menus.css */
+.menu-item {
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background: rgba(0, 0, 0, 0.08);
+}

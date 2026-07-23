@@ -1,0 +1,16 @@
+/* theme.css */
+body {
+    background: linear-gradient(to bottom, #009595 0%, #006b6b 100%);
+}
+
+.window-body {
+    border-radius: 0;
+}
+
+.win98-start-item {
+    transition: background 120ms ease-in-out, color 120ms ease-in-out;
+}
+
+.win98-taskbar-tab {
+    transition: background 120ms ease-in-out, box-shadow 120ms ease-in-out;
+}
