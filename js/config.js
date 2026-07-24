@@ -28,5 +28,10 @@ export const projectDefinitions = [
         title: 'CS2 Case Opening',
         description: 'Counter-Strike 2 case opening simulator.',
         url: 'https://github.com/Kanerock17yt/CS2-Case-Opening'
+    },
+    {
+        title: 'Personal Portfolio',
+        description: 'Personal portfolio website showcasing my projects and skills.',
+        url: 'https://github.com/Kanerock17yt/Kanerock17yt.github.io'
     }
 ];

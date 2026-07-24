@@ -16,27 +16,33 @@
     <!-- Desktop Area -->
     <div class="desktop" id="desktop">
         <!-- Desktop Icon: Welcome -->
-        <div class="desktop-icon" id="icon-welcome">
+        <div class="desktop-icon" id="icon-welcome" data-window="window-welcome" data-tab="tab-welcome">
             <i class="fa-solid fa-star fa-2x" style="color: #fff; filter: drop-shadow(1px 1px #000);"></i>
             <span>Welcome.txt</span>
         </div>
 
         <!-- Desktop Icon: Hacking -->
-        <div class="desktop-icon" id="icon-hacking">
+        <div class="desktop-icon" id="icon-hacking" data-window="window-hacking" data-tab="tab-hacking">
             <i class="fa-solid fa-terminal fa-2x" style="color: #0f0; filter: drop-shadow(1px 1px #000);"></i>
             <span>hacking.exe</span>
         </div>
 
         <!-- Desktop Icon: Projects -->
-        <div class="desktop-icon" id="icon-projects">
+        <div class="desktop-icon" id="icon-projects" data-window="window-projects" data-tab="tab-projects">
             <i class="fa-solid fa-folder fa-2x" style="color: #f0c040; filter: drop-shadow(1px 1px #000);"></i>
             <span>My Projects</span>
         </div>
 
         <!-- Desktop Icon: About Me -->
-        <div class="desktop-icon" id="icon-about">
+        <div class="desktop-icon" id="icon-about" data-window="window-about" data-tab="tab-about">
             <i class="fa-solid fa-file-lines fa-2x" style="color: #fff; filter: drop-shadow(1px 1px #000);"></i>
             <span>About.txt</span>
+        </div>
+
+        <!-- Desktop Icon: Credits -->
+        <div class="desktop-icon" id="icon-credits" data-window="window-credits" data-tab="tab-credits">
+            <i class="fa-solid fa-award fa-2x" style="color: #f0c040; filter: drop-shadow(1px 1px #000);"></i>
+            <span>Credits.txt</span>
         </div>
 
         <!-- Window: Welcome -->
@@ -112,6 +118,29 @@
                 <p>I am a developer who loves crafting custom software utilities, full-stack web applications, game mods, and automation tools.</p>
             </div>
         </div>
+
+        <!-- Window: Credits -->
+        <div class="window window-credits" id="window-credits">
+            <div class="title-bar" id="titlebar-credits">
+                <div class="title-bar-text">
+                    <i class="fa-solid fa-award"></i> Credits.txt - Notepad
+                </div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize" id="min-credits"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" id="close-credits"></button>
+                </div>
+            </div>
+            <div class="window-body about-body">
+                <p>Thanks for visiting Kane's Retro Hub.</p>
+                <ul>
+                    <li>Built by Kane_rock17yt with open-source tools and classic Windows 98 style.</li>
+                    <li>UI inspired by 98.css and retro desktop design.</li>
+                    <li>Icons by FontAwesome.</li>
+                    <li>Special thanks to open-source developers, tutorials, and community resources.</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <!-- Classic Win98 Start Menu Dropdown -->
@@ -156,6 +185,9 @@
             </div>
             <div class="win98-taskbar-tab minimized" id="tab-about">
                 <i class="fa-solid fa-file-lines icon-taskbar-about"></i> About.txt
+            </div>
+            <div class="win98-taskbar-tab minimized" id="tab-credits">
+                <i class="fa-solid fa-award icon-taskbar-credits"></i> Credits.txt
             </div>
         </div>
 

@@ -1,29 +1,29 @@
 import { openWindow, closeWindow, setActiveWindow } from './windowManager.js';
 
 export function initDesktop() {
-    const welcomeIcon = document.getElementById('icon-welcome');
-    const hackingIcon = document.getElementById('icon-hacking');
-    const projectsIcon = document.getElementById('icon-projects');
-    const aboutIcon = document.getElementById('icon-about');
+    const desktop = document.getElementById('desktop');
+    if (!desktop) return;
 
-    welcomeIcon.addEventListener('click', () => {
-        openWindow('window-welcome', 'tab-welcome');
-    });
-
-    hackingIcon.addEventListener('click', () => {
-        openWindow('window-hacking', 'tab-hacking');
-    });
-
-    projectsIcon.addEventListener('click', () => {
-        openWindow('window-projects', 'tab-projects');
-    });
-
-    aboutIcon.addEventListener('click', () => {
-        openWindow('window-about', 'tab-about');
-    });
+    bindIcon('icon-welcome', 'window-welcome', 'tab-welcome');
+    bindIcon('icon-hacking', 'window-hacking', 'tab-hacking');
+    bindIcon('icon-projects', 'window-projects', 'tab-projects');
+    bindIcon('icon-about', 'window-about', 'tab-about');
+    bindIcon('icon-credits', 'window-credits', 'tab-credits');
 
     setupWindowButtons();
     openWindow('window-welcome', 'tab-welcome');
+}
+
+function bindIcon(iconId, windowId, tabId) {
+    const icon = document.getElementById(iconId);
+    if (!icon) {
+        console.warn(`Desktop icon not found: ${iconId}`);
+        return;
+    }
+
+    icon.addEventListener('click', () => {
+        openWindow(windowId, tabId);
+    });
 }
 
 function setupWindowButtons() {
@@ -59,6 +59,14 @@ function setupWindowButtons() {
             minBtnId: 'min-about',
             titleBarId: 'titlebar-about',
             tabId: 'tab-about'
+        },
+        {
+            windowId: 'window-credits',
+            iconId: 'icon-credits',
+            closeBtnId: 'close-credits',
+            minBtnId: 'min-credits',
+            titleBarId: 'titlebar-credits',
+            tabId: 'tab-credits'
         }
     ];
 
@@ -69,6 +77,11 @@ function setupWindowButtons() {
         const minBtn = document.getElementById(config.minBtnId);
         const titleBar = document.getElementById(config.titleBarId);
         const tab = document.getElementById(config.tabId);
+
+        if (!winEl || !icon || !closeBtn || !minBtn || !titleBar || !tab) {
+            console.warn(`Missing desktop element for ${config.windowId}`);
+            return;
+        }
 
         icon.addEventListener('click', () => {
             if (winEl.classList.contains('window-open')) {

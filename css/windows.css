@@ -15,6 +15,12 @@
     box-sizing: border-box;
 }
 
+#window-credits {
+    width: 360px;
+    min-width: 280px;
+    min-height: 170px;
+}
+
 .title-bar {
     background: linear-gradient(90deg, var(--accent-dark), var(--accent-blue));
     color: #fff;
