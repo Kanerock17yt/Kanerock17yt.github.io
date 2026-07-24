@@ -56,9 +56,12 @@
     left: 130px;
 }
 
+/* Center credits window using fixed offset to avoid transform conflicts with drag logic */
 #window-credits {
-    top: 135px;
-    left: 150px;
+    /* width is set to 360px in windows.css, so offset by half width (180px) */
+    left: calc(50% - 180px);
+    /* min-height is 170px in windows.css, so offset vertically by half (85px) */
+    top: calc(50% - 85px);
 }
 
 .window {

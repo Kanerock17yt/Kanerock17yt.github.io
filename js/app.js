@@ -8,7 +8,6 @@ import { openWindow } from './windowManager.js';
 function initializeApp() {
     initDesktop();
     initProjects();
-    openWindow('window-projects', 'tab-projects');
     initStartMenu();
     initClock();
     initMatrix();

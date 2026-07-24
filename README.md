@@ -1,4 +1,4 @@
-![Project Preview](./image_2026-07-23_122823300.png)
+![Project Preview](./assets/images/Preview.png)
 
 # Kane's Retro Hub
 
