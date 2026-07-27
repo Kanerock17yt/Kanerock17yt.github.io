@@ -1,0 +1,12 @@
+{
+  "name": "kanerock17yt.github.io",
+  "version": "1.0.0",
+  "description": "Static Windows-98 style personal site",
+  "main": "serve.js",
+  "scripts": {
+    "start": "node serve.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

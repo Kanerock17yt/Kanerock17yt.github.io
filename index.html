@@ -63,7 +63,31 @@
                 <p>Enjoy the retro Windows 98 experience while browsing.</p>
             </div>
         </div>
+        
+            <!-- Window: Contact -->
+            <div class="window window-contact" id="window-contact">
+                <div class="title-bar" id="titlebar-contact">
+                    <div class="title-bar-text">
+                        <i class="fa-solid fa-address-book"></i> Contact
+                    </div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Minimize" id="min-contact"></button>
+                        <button aria-label="Maximize"></button>
+                        <button aria-label="Close" id="close-contact"></button>
+                    </div>
+                </div>
+                <div class="window-body about-body">
+                    <p>Contact links</p>
+                    <ul>
+                        <li><i class="fa-brands fa-youtube" style="width: 18px;"></i> <a id="contact-youtube" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
+                        <li><i class="fa-solid fa-envelope" style="width: 18px;"></i> <a id="contact-email" href="mailto:your-email@example.com">your-email@example.com</a></li>
+                        <li><i class="fa-brands fa-discord" style="width: 18px;"></i> Discord: <span id="contact-discord">your-discord#1234</span></li>
+                        <li><i class="fa-brands fa-twitter" style="width: 18px;"></i> <a id="contact-twitter" href="https://twitter.com/" target="_blank" rel="noopener">Twitter</a></li>
+                    </ul>
 
+                    
+                </div>
+            </div>
         <!-- Window: Hacking -->
         <div class="window window-hacking" id="window-hacking">
             <div class="title-bar" id="titlebar-hacking">
@@ -116,6 +140,8 @@
             <div class="window-body about-body">
                 <p>Welcome to my retro desktop space!</p>
                 <p>I am a developer who loves crafting custom software utilities, full-stack web applications, game mods, and automation tools.</p>
+                <br> <br>
+                <p>You can find me on <a href="https://github.com/Kane rock17yt" target="_blank">GitHub</a>, Youtube, Email and more! I also have a Discord server in progress, so stay tuned for that.</p>
             </div>
         </div>
 
@@ -141,6 +167,7 @@
                 </ul>
             </div>
         </div>
+        
     </div>
 
     <!-- Classic Win98 Start Menu Dropdown -->
@@ -161,6 +188,10 @@
             <div class="win98-start-item" id="start-about-trigger" data-menu-action="open-about">
                 <i class="fa-solid fa-file-lines" style="width: 14px; text-align: center;"></i> Open About.txt
             </div>
+            <div class="win98-start-item" id="start-contact-trigger" data-menu-action="open-contact">
+                <i class="fa-solid fa-address-book" style="width: 14px; text-align: center;"></i> Contact
+            </div>
+            
             <div class="win98-start-divider"></div>
         </div>
     </div>
@@ -189,6 +220,7 @@
             <div class="win98-taskbar-tab minimized" id="tab-credits">
                 <i class="fa-solid fa-award icon-taskbar-credits"></i> Credits.txt
             </div>
+            
         </div>
 
         <div class="win98-taskbar-divider"></div>
@@ -196,6 +228,7 @@
     </div>
 
     <!-- Core interactive scripts moved to modular JS files -->
+    <script src="js/auth.js"></script>
     <script type="module" src="js/app.js"></script>
 </body>
 </html>

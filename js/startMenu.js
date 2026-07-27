@@ -45,6 +45,10 @@ function handleMenuAction(action, menu, button) {
             // intentionally keep about closed on startup; open only via click
             openWindow('window-about', 'tab-about');
             break;
+        case 'open-contact':
+            openWindow('window-contact', 'tab-contact');
+            break;
+        
         default:
             break;
     }

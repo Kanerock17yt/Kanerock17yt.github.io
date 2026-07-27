@@ -68,6 +68,14 @@ function setupWindowButtons() {
             titleBarId: 'titlebar-credits',
             tabId: 'tab-credits'
         }
+        ,{
+            windowId: 'window-contact',
+            iconId: 'icon-contact',
+            closeBtnId: 'close-contact',
+            minBtnId: 'min-contact',
+            titleBarId: 'titlebar-contact',
+            tabId: 'tab-contact'
+        }
     ];
 
     windowSetups.forEach(config => {
@@ -78,18 +86,20 @@ function setupWindowButtons() {
         const titleBar = document.getElementById(config.titleBarId);
         const tab = document.getElementById(config.tabId);
 
-        if (!winEl || !icon || !closeBtn || !minBtn || !titleBar || !tab) {
+        if (!winEl || !closeBtn || !minBtn || !titleBar || !tab) {
             console.warn(`Missing desktop element for ${config.windowId}`);
             return;
         }
 
-        icon.addEventListener('click', () => {
-            if (winEl.classList.contains('window-open')) {
-                setActiveWindow(config.windowId);
-            } else {
-                openWindow(config.windowId, config.tabId);
-            }
-        });
+        if (icon) {
+            icon.addEventListener('click', () => {
+                if (winEl.classList.contains('window-open')) {
+                    setActiveWindow(config.windowId);
+                } else {
+                    openWindow(config.windowId, config.tabId);
+                }
+            });
+        }
 
         closeBtn.addEventListener('click', () => closeWindow(config.windowId, config.tabId));
         minBtn.addEventListener('click', () => closeWindow(config.windowId, config.tabId));
