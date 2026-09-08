@@ -1,5 +1,3 @@
-![Project Preview](./assets/images/Preview.png)
-
 # Kane's Retro Hub
 
 A Windows 98-inspired homepage that links to GitHub projects and uses modular CSS and JavaScript.
@@ -44,3 +42,8 @@ Notes
 - The project no longer includes the announce helper. The Contact window only displays links.
 - If you want me to add a production-ready Node server or a one-click start script, tell me and I'll add it.
 
+## Previews
+### Main Site:
+![Main Site](./assets/images)
+### Retro Hub:
+![Retro Hub](./assets/images/retro-hub-preview.png)
