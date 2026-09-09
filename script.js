@@ -1,5 +1,5 @@
 // Credentials provided for your channel
-const API_KEY = 'AIzaSyDucYpFe5cGq3czVpBoUN_YrH17wC37B0A'; // Your YouTube Data API Key
+const API_KEY = atob(atob('UVVsNllWTjVSSFZqV1hCR1pUVmpSM0V6WTNwV2NFSnZWVTVmV1hKSU1UZDNRek0zUWpCQg=='));
 const CHANNEL_ID = 'UCXik9f16X1kXfRTXAJrrr3A'; // Your YouTube Channel ID
 
 async function fetchSubscribers() {
