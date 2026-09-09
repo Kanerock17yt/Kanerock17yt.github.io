@@ -69,6 +69,13 @@ h1 {
   line-height: 0.95;
 }
 
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Adds horizontal centering */
+  gap: 12px;
+}
+
 .subtitle {
   margin: 0;
   max-width: 640px;
