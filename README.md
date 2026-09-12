@@ -44,6 +44,6 @@ Notes
 
 ## Previews
 ### Main Site:
-![Main Site](./assets/images)
+![Main Site](./assets/images/main-website-preview.png)
 ### Retro Hub:
 ![Retro Hub](./assets/images/retro-hub-preview.png)
