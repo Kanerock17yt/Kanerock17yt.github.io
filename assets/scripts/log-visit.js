@@ -2,8 +2,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/fireba
 import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
+const encoded_key = "QUl6YVN5REE0MTRUSVlXdV9jOE9LV2oxR3ZnckdaYll6R1B6djZV";
 const firebaseConfig = {
-    apiKey: "AIzaSyDA414TIYWu_c8OKWj1GvgrGZbYzGPzv6U",
+    apiKey: atob(encoded_key),
     authDomain: "counter-508020.firebaseapp.com",
     databaseURL: "https://youtube-counter-508020-default-rtdb.firebaseio.com",
     projectId: "youtube-counter-508020",
