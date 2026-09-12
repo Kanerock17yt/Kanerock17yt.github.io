@@ -34,12 +34,11 @@
     </div>
 
     <script src="./script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
         import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
-        // Your Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyDA414TIYWu_c8OKWj1GvgrGZbYzGPzv6U",
             authDomain: "counter-508020.firebaseapp.com",
@@ -50,22 +49,30 @@
             appId: "1:600998318105:web:9835946bd363b3b57cda88"
         };
 
-        const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app);
-
         const SECRET_KEY = '#EÅÏ"àë.×θÞyσJÒÙæØyXâTχË2HPoè3öÀâ[ÓNEPsοÄυîHjh(CÒÀPÐ}>M*{ÑfGoμCêKÈ"VGÄuÅç~1G?ζξLZ%MοÑÞK[òÂCYÒpöl8:';
 
-        const rawData = JSON.stringify({
-            page: window.location.pathname,
-            time: new Date().toLocaleTimeString()
-        });
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getDatabase(app);
 
-        const encryptedData = CryptoJS.AES.encrypt(rawData, SECRET_KEY).toString();
+        signInAnonymously(auth)
+            .then(() => {
+                const visitorData = JSON.stringify({
+                    page: window.location.pathname,
+                    time: new Date().toLocaleTimeString()
+                });
 
-        const visitorsRef = ref(db, 'active-visitors');
-        push(visitorsRef, {
-            payload: encryptedData
-        });
+                const encryptedPayload = CryptoJS.AES.encrypt(visitorData, SECRET_KEY).toString();
+
+                push(ref(db, 'active-visitors'), {
+                    payload: encryptedPayload
+                });
+            })
+            .catch((error) => {
+                console.error("Visitor tracking initialization failed:", error);
+            });
     </script>
+    <!-- Make sure to include crypto-js on your page if not already loaded: -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
 </body>
 </html>
