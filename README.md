@@ -20,18 +20,7 @@ A Windows 98-inspired homepage that links to GitHub projects and uses modular CS
 - KA Language
 - CS2 Case Opening
 
-## Run locally with Node.js
-
-Run a small Node.js static server to serve the site locally:
-
-```bash
-npm install
-npm start
-```
-
-Then open http://localhost:3000 in your browser.
-
-Alternately, use a quick Python server:
+## use a quick Python server for testing:
 
 ```bash
 python3 -m http.server 8000
