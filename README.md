@@ -1,6 +1,6 @@
 # 🖥️ Kane's Portfolio & Arcade Hub
 
-> **A personal portfolio showcasing Kane's projects, programming work, and creations, complete with an arcade hub and a secret vault.**
+> **A personal portfolio showcasing Kane's projects, programming work, and creations, complete with an arcade hub**
 
 Welcome to my portfolio! This website is a central place to showcase the projects I've built, programming experiments I've worked on, and things I'm currently creating.
 
@@ -18,9 +18,6 @@ The portfolio combines a modern project showcase with a **Windows 95/98-inspired
 - 🍪 **Interactive Mini-Games**: 
   - Flappy Bird
   - Talk to Nothing (interactive void chat)
-  - Tetris
-  - Cookie Clicker (featuring a `?cappy` easter egg and a **Duo Button** multi-click mode using Space + Up Arrow)
-  - Retro Sound Board (frequency synthesizer)
   - Eat Bread mini-game
 - 🚀 **Static Hosting Ready**: Optimized for GitHub Pages with search engine crawler configuration (`robots.txt`).
 
@@ -33,38 +30,6 @@ I'm **Kane**, a programmer and creator who enjoys building software, websites, g
 I like experimenting with different technologies and creating my own projects — from web applications and tools to programming languages and game-related projects.
 
 This portfolio brings my work and arcade games together in one place.
-
----
-
-## 📁 Project Structure
-
-<pre>
-Kane's Portfolio/
-│
-├── index.html              # Main portfolio homepage
-├── games.html              # Public arcade hub
-├── robots.txt              # Search engine crawler rules
-├── assets/
-│   └── games2.html         # Secret password-protected vault
-└── sub websites/
-    ├── flappy.html         # Flappy Bird sub-site
-    ├── talk.html           # Talk to Nothing sub-site
-    ├── tetris.html         # Tetris sub-site
-    ├── cookie.html         # Cookie Clicker / Cappy Clicker
-    ├── soundboard.html     # Audio frequency sound board
-    └── bread.html          # Eat Bread mini-game
-</pre>
-
----
-
-## 🔒 Accessing the Secret Vault
-
-The secret vault (`assets/games2.html`) is locked behind an authorization gate:
-
-1. Navigate to the secret vault page.
-2. Open your browser's developer console (`F12` or right-click -> Inspect -> Console).
-3. Look for the system log hint containing the encoded Base64 password string.
-4. Type `atob('YOUR_ENCODED_STRING')` in the console to reveal the password, then enter it to unlock the vault.
 
 ---
 
@@ -130,10 +95,4 @@ See the repository's license for information about using and modifying the proje
 
 ---
 
-<p align="center">
-
-**Made by Kane**
-
-💻 `Kane's Portfolio`
-
-</p>
+<p align="center"><strong>Made by Kane</strong>💻 <code>Kane's Portfolio</code></p>
