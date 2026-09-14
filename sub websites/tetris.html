@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris</title>
+    <style>
+        body { background: #0f172a; color: #f8fafc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; margin: 0; padding: 40px; }
+        .game-shell { background: rgba(15, 23, 42, 0.72); border: 1px solid rgba(148, 163, 184, 0.22); border-radius: 28px; padding: 30px; max-width: 400px; margin: 0 auto; box-shadow: 0 30px 80px rgba(15, 23, 42, 0.45); }
+        canvas { background: #000; display: block; margin: 15px auto; border: 2px solid #444; border-radius: 12px; }
+        button { padding: 10px 20px; background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(59, 130, 246, 0.8)); border: none; font-weight: bold; cursor: pointer; border-radius: 12px; color: #fff; font-family: monospace; font-size: 1rem; }
+        button:hover { opacity: 0.9; }
+        a { display: inline-block; margin-top: 20px; color: #cbd5e1; text-decoration: none; font-size: 0.9rem; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="game-shell">
+        <h1>Tetris</h1>
+        <canvas id="tetrisCanvas" width="200" height="400"></canvas>
+        <p style="font-size: 0.85rem; color: #cbd5e1;">Controls: Use Arrow Keys / Space to drop</p>
+        <button onclick="startTetris()">Start Tetris</button>
+        <br>
+        <a href="../games.html">← Back to Arcade Hub</a>
+    </div>
+
+    <script>
+        const canvas = document.getElementById("tetrisCanvas");
+        const ctx = canvas.getContext("2d");
+        ctx.scale(20, 20);
+        let interval = null;
+
+        function createMatrix(w, h) {
+            const matrix = [];
+            while (h--) matrix.push(new Array(w).fill(0));
+            return matrix;
+        }
+
+        const arena = createMatrix(10, 20);
+        const player = { pos: {x: 3, y: 0}, matrix: [[0, 1, 0],[1, 1, 1],[0, 0, 0]] };
+
+        function drawMatrix(matrix, offset) {
+            matrix.forEach((row, y) => {
+                row.forEach((value, x) => {
+                    if (value !== 0) {
+                        ctx.fillStyle = '#7c3aed';
+                        ctx.fillRect(x + offset.x, y + offset.y, 1, 1);
+                    }
+                });
+            });
+        }
+
+        function draw() {
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            drawMatrix(arena, {x:0, y:0});
+            drawMatrix(player.matrix, player.pos);
+        }
+
+        function startTetris() {
+            if (interval) clearInterval(interval);
+            player.pos.y = 0;
+            interval = setInterval(() => {
+                player.pos.y++;
+                draw();
+            }, 500);
+        }
+    </script>
+</body>
+</html>

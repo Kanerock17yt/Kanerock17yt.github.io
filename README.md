@@ -1,28 +1,28 @@
-# 🖥️ Kane's Portfolio
+# 🖥️ Kane's Portfolio & Arcade Hub
 
-> **A personal portfolio showcasing Kane's projects, programming work, and creations.**
+> **A personal portfolio showcasing Kane's projects, programming work, and creations, complete with an arcade hub and a secret vault.**
 
 Welcome to my portfolio! This website is a central place to showcase the projects I've built, programming experiments I've worked on, and things I'm currently creating.
 
-The portfolio combines a modern project showcase with a **Windows 95/98-inspired visual style**, giving the site a nostalgic desktop-computer feel while still functioning as a modern portfolio.
-
-![Main Site](./assets/images/main-website-preview.png)
+The portfolio combines a modern project showcase with a **Windows 95/98-inspired visual style**, giving the site a nostalgic desktop-computer feel while housing a fully functional arcade hub and password-protected secret vault.
 
 ---
 
 ## ✨ Features
 
-- 👨‍💻 Personal portfolio
-- 🚀 Project showcase
-- 🔗 Links to my projects and work
+- 👨‍💻 Personal portfolio & project showcase
 - 🪟 Windows 95/98-inspired interface
-- 🧩 Modular CSS architecture
-- 📦 Modular JavaScript architecture
-- 📱 Responsive layout
-- 📚 Built-in documentation
-- 🧪 Test scaffolding
-- 🎨 Retro-inspired UI
-- 🚀 Simple local development setup
+- 🎮 **Public Arcade Hub (`games.html`)**: Central station for playing public browser games.
+- 🔒 **Classified Vault (`assets/games2.html`)**: Secure, password-protected area guarded by a browser-console Base64 decoding challenge.
+- 🧩 **Modular Architecture**: Self-contained sub-sites located in the `sub websites/` directory with embedded CSS and JavaScript.
+- 🍪 **Interactive Mini-Games**: 
+  - Flappy Bird
+  - Talk to Nothing (interactive void chat)
+  - Tetris
+  - Cookie Clicker (featuring a `?cappy` easter egg and a **Duo Button** multi-click mode using Space + Up Arrow)
+  - Retro Sound Board (frequency synthesizer)
+  - Eat Bread mini-game
+- 🚀 **Static Hosting Ready**: Optimized for GitHub Pages with search engine crawler configuration (`robots.txt`).
 
 ---
 
@@ -32,24 +32,7 @@ I'm **Kane**, a programmer and creator who enjoys building software, websites, g
 
 I like experimenting with different technologies and creating my own projects — from web applications and tools to programming languages and game-related projects.
 
-This portfolio brings my work together in one place.
-
----
-
-## 🚀 Projects
-
-Some of the projects showcased in my portfolio include:
-
-| Project | Description |
-|---|---|
-| 🎲 **RNG Cases** | Random case-opening project |
-| 💻 **Terminal** | Browser-based terminal experience |
-| 📝 **Notes App** | Simple notes application |
-| 📄 **Markdown Previewer** | Live Markdown rendering |
-| 🔤 **KA Language** | My custom programming language |
-| 🎰 **CS2 Case Opening** | CS2-inspired case opening project |
-
-More projects will be added as I continue creating them.
+This portfolio brings my work and arcade games together in one place.
 
 ---
 
@@ -59,19 +42,29 @@ More projects will be added as I continue creating them.
 Kane's Portfolio/
 │
 ├── index.html              # Main portfolio homepage
-├── style.css               # Root stylesheet
-│
-├── css/                    # Modular CSS files
-│
-├── js/                     # JavaScript modules
-│
+├── games.html              # Public arcade hub
+├── robots.txt              # Search engine crawler rules
 ├── assets/
-│   └── images/             # Screenshots and project images
-│
-├── docs/                   # Documentation and notes
-│
-└── tests/                  # Test scaffolding
+│   └── games2.html         # Secret password-protected vault
+└── sub websites/
+    ├── flappy.html         # Flappy Bird sub-site
+    ├── talk.html           # Talk to Nothing sub-site
+    ├── tetris.html         # Tetris sub-site
+    ├── cookie.html         # Cookie Clicker / Cappy Clicker
+    ├── soundboard.html     # Audio frequency sound board
+    └── bread.html          # Eat Bread mini-game
 </pre>
+
+---
+
+## 🔒 Accessing the Secret Vault
+
+The secret vault (`assets/games2.html`) is locked behind an authorization gate:
+
+1. Navigate to the secret vault page.
+2. Open your browser's developer console (`F12` or right-click -> Inspect -> Console).
+3. Look for the system log hint containing the encoded Base64 password string.
+4. Type `atob('YOUR_ENCODED_STRING')` in the console to reveal the password, then enter it to unlock the vault.
 
 ---
 
@@ -83,7 +76,7 @@ Kane's Portfolio/
 python3 -m http.server 8000
 </pre>
 
-Then open:
+Then open your browser at:
 
 <pre>
 http://127.0.0.1:8000
@@ -91,7 +84,7 @@ http://127.0.0.1:8000
 
 ### Windows
 
-If `python3` doesn't work, use:
+If `python3` isn't recognized, use:
 
 <pre>
 python -m http.server 8000
@@ -113,74 +106,15 @@ The interface features:
 - 📋 Old-school UI components
 - ✨ Pixel-inspired styling
 
-The goal is to make a modern developer portfolio feel like you're opening a tiny piece of a late-90s computer on a modern PC.
-
-![Portfolio Preview](./assets/images/retro-hub-preview.png)
-
----
-
-## 🧩 Architecture
-
-The project is organized into separate modules to keep the codebase clean and easier to maintain.
-
-### CSS
-
-Styles are separated into individual modules inside:
-
-<pre>
-css/
-</pre>
-
-The root `style.css` imports the required CSS modules.
-
-### JavaScript
-
-Application logic is separated into modules inside:
-
-<pre>
-js/
-</pre>
-
-This keeps individual features organized and makes future updates easier.
-
----
-
-## 🧪 Testing
-
-Testing files and scaffolding are located in:
-
-<pre>
-tests/
-</pre>
-
-These can be expanded as the portfolio and its features grow.
-
----
-
-## 📸 Previews
-
-### Main Portfolio
-
-![Main Site](./assets/images/main-website-preview.png)
-
-### Portfolio Design
-
-![Portfolio Preview](./assets/images/retro-hub-preview.png)
-
 ---
 
 ## 🗺️ Roadmap
 
 - [ ] Add more projects
-- [ ] Add detailed project pages
-- [ ] Add more project integrations
+- [ ] Add more arcade mini-games
+- [ ] Implement `localStorage` high-score tracking
+- [ ] Enhance mobile touch controls for sub-sites
 - [ ] Add additional retro-style windows
-- [ ] Improve mobile support
-- [ ] Add project search
-- [ ] Add custom themes
-- [ ] Add more interactive desktop features
-- [ ] Add additional retro system utilities
-- [ ] Continue improving the portfolio experience
 
 ---
 

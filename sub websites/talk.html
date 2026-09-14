@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Talk to Nothing</title>
+    <style>
+        body { background: #0f172a; color: #f8fafc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; margin: 0; padding: 40px; }
+        .game-shell { background: rgba(15, 23, 42, 0.72); border: 1px solid rgba(148, 163, 184, 0.22); border-radius: 28px; padding: 30px; max-width: 500px; margin: 0 auto; box-shadow: 0 30px 80px rgba(15, 23, 42, 0.45); }
+        .chat-box { height: 250px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 12px; overflow-y: auto; text-align: left; padding: 15px; margin-bottom: 15px; font-family: monospace; }
+        input { width: 65%; padding: 10px; background: #1e293b; border: 1px solid rgba(148, 163, 184, 0.3); border-radius: 8px; color: #fff; }
+        button { padding: 10px 15px; background: linear-gradient(135deg, rgba(249, 115, 22, 0.8), rgba(251, 146, 60, 0.8)); border: none; font-weight: bold; cursor: pointer; border-radius: 8px; color: #fff; font-family: monospace; }
+        button:hover { opacity: 0.9; }
+        a { display: inline-block; margin-top: 20px; color: #cbd5e1; text-decoration: none; font-size: 0.9rem; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="game-shell">
+        <h1>Talk to Nothing</h1>
+        <p style="color: #cbd5e1; font-size: 0.9rem;">Type your thoughts into the void...</p>
+        <div class="chat-box" id="chatLog"></div>
+        <input type="text" id="chatInput" placeholder="Say something...">
+        <button onclick="sendChatMessage()">Send</button>
+        <br>
+        <a href="../games.html">← Back to Arcade Hub</a>
+    </div>
+
+    <script>
+        function sendChatMessage() {
+            const input = document.getElementById("chatInput");
+            const log = document.getElementById("chatLog");
+            if (!input.value.trim()) return;
+
+            log.innerHTML += `<div style="margin-bottom: 8px;"><b style="color: #f97316;">You:</b> ${input.value}</div>`;
+            input.value = "";
+            log.scrollTop = log.scrollHeight;
+
+            setTimeout(() => {
+                log.innerHTML += `<div style="margin-bottom: 8px; color: #94a3b8;"><i>[Nothing]: ...</i></div>`;
+                log.scrollTop = log.scrollHeight;
+            }, 600);
+        }
+    </script>
+</body>
+</html>

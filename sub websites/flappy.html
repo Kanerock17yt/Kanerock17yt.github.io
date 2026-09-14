@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flappy Bird</title>
+    <style>
+        body { background: #0f172a; color: #f8fafc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; margin: 0; padding: 40px; }
+        .game-shell { background: rgba(15, 23, 42, 0.72); border: 1px solid rgba(148, 163, 184, 0.22); border-radius: 28px; padding: 30px; max-width: 450px; margin: 0 auto; box-shadow: 0 30px 80px rgba(15, 23, 42, 0.45); }
+        canvas { background: #000; display: block; margin: 20px auto; border: 2px solid #444; border-radius: 12px; }
+        button { padding: 10px 20px; background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(59, 130, 246, 0.8)); border: none; font-weight: bold; cursor: pointer; border-radius: 12px; color: #fff; font-family: monospace; font-size: 1rem; }
+        button:hover { opacity: 0.9; }
+        a { display: inline-block; margin-top: 20px; color: #cbd5e1; text-decoration: none; font-size: 0.9rem; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="game-shell">
+        <h1>Flappy Bird</h1>
+        <canvas id="flappyCanvas" width="288" height="400"></canvas>
+        <button onclick="resetFlappy()">Start / Reset</button>
+        <br>
+        <a href="../games.html">← Back to Arcade Hub</a>
+    </div>
+
+    <script>
+        const canvas = document.getElementById("flappyCanvas");
+        const ctx = canvas.getContext("2d");
+        let bird = { x: 50, y: 150, gravity: 0.6, lift: -10, velocity: 0 };
+        let pipes = [];
+        let score = 0;
+        let isRunning = false;
+
+        function resetFlappy() {
+            bird.y = 150;
+            bird.velocity = 0;
+            pipes = [{ x: 288, top: 100, bottom: 220 }];
+            score = 0;
+            isRunning = true;
+        }
+
+        window.addEventListener("keydown", (e) => {
+            if (e.code === "Space" && isRunning) bird.velocity = bird.lift;
+        });
+
+        function update() {
+            if (!isRunning) return;
+            bird.velocity += bird.gravity;
+            bird.y += bird.velocity;
+
+            if (bird.y > canvas.height || bird.y < 0) isRunning = false;
+
+            if (pipes.length === 0 || pipes[pipes.length - 1].x < 150) {
+                let top = Math.random() * 150 + 50;
+                pipes.push({ x: 288, top: top, bottom: top + 120 });
+                score++;
+            }
+
+            pipes.forEach(pipe => {
+                pipe.x -= 2;
+                if (pipe.x < bird.x + 20 && pipe.x + 40 > bird.x && (bird.y < pipe.top || bird.y > pipe.bottom + 20)) {
+                    isRunning = false;
+                }
+            });
+
+            pipes = pipes.filter(pipe => pipe.x > -40);
+        }
+
+        function draw() {
+            ctx.fillStyle = "#1e293b";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = "#facc15";
+            ctx.fillRect(bird.x, bird.y, 20, 20);
+
+            ctx.fillStyle = "#22c55e";
+            pipes.forEach(pipe => {
+                ctx.fillRect(pipe.x, 0, 40, pipe.top);
+                ctx.fillRect(pipe.x, pipe.bottom, 40, canvas.height - pipe.bottom);
+            });
+
+            ctx.fillStyle = "#fff";
+            ctx.font = "16px monospace";
+            ctx.fillText("Score: " + score, 15, 30);
+        }
+
+        setInterval(() => { update(); draw(); }, 1000 / 30);
+    </script>
+</body>
+</html>

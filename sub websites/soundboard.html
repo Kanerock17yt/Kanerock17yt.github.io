@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sound Board</title>
+    <style>
+        body { background: #0f172a; color: #f8fafc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; margin: 0; padding: 40px; }
+        .game-shell { background: rgba(15, 23, 42, 0.72); border: 1px solid rgba(148, 163, 184, 0.22); border-radius: 28px; padding: 30px; max-width: 450px; margin: 0 auto; box-shadow: 0 30px 80px rgba(15, 23, 42, 0.45); }
+        .sound-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 20px 0; }
+        button { padding: 14px; background: linear-gradient(135deg, rgba(34, 197, 94, 0.8), rgba(16, 185, 129, 0.8)); border: none; font-weight: bold; cursor: pointer; border-radius: 12px; color: #fff; font-family: monospace; font-size: 1rem; }
+        button:hover { opacity: 0.9; }
+        a { display: inline-block; margin-top: 20px; color: #cbd5e1; text-decoration: none; font-size: 0.9rem; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="game-shell">
+        <h1>Sound Board</h1>
+        <p style="color: #cbd5e1; font-size: 0.9rem;">Trigger retro frequency synths!</p>
+        
+        <div class="sound-grid">
+            <button onclick="playSound(440)">Beep (440 Hz)</button>
+            <button onclick="playSound(587.33)">Boop (587 Hz)</button>
+            <button onclick="playSound(880)">Laser (880 Hz)</button>
+        </div>
+
+        <a href="../assets/games2.html">← Back to Secret Vault</a>
+    </div>
+
+    <script>
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playSound(freq) {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.value = freq;
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            gain.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + 0.3);
+            setTimeout(() => osc.stop(), 300);
+        }
+    </script>
+</body>
+</html>

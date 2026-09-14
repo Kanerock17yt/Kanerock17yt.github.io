@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eat Bread</title>
+    <style>
+        body { background: #0f172a; color: #f8fafc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; margin: 0; padding: 40px; }
+        .game-shell { background: rgba(15, 23, 42, 0.72); border: 1px solid rgba(148, 163, 184, 0.22); border-radius: 28px; padding: 30px; max-width: 450px; margin: 0 auto; box-shadow: 0 30px 80px rgba(15, 23, 42, 0.45); }
+        .bread-slice { font-size: 45px; cursor: pointer; display: inline-block; margin: 8px; transition: transform 0.2s; }
+        .bread-slice:hover { transform: scale(1.2); }
+        a { display: inline-block; margin-top: 20px; color: #cbd5e1; text-decoration: none; font-size: 0.9rem; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="game-shell">
+        <h1>🍞 EAT BREAD</h1>
+        <p style="color: #cbd5e1; font-size: 0.9rem;">Click all 5 slices of bread to win!</p>
+        
+        <div id="breadContainer" style="margin: 20px 0;">
+            <span class="bread-slice" onclick="eatBread(this)">🍞</span>
+            <span class="bread-slice" onclick="eatBread(this)">🍞</span>
+            <span class="bread-slice" onclick="eatBread(this)">🍞</span>
+            <span class="bread-slice" onclick="eatBread(this)">🍞</span>
+            <span class="bread-slice" onclick="eatBread(this)">🍞</span>
+        </div>
+        
+        <h3 id="winMessage" style="color: #22c55e; min-height: 24px;"></h3>
+
+        <a href="../assets/games2.html">← Back to Secret Vault</a>
+    </div>
+
+    <script>
+        let breadEaten = 0;
+        function eatBread(element) {
+            if (element.style.visibility === "hidden") return;
+            element.style.visibility = "hidden";
+            breadEaten++;
+
+            if (breadEaten === 5) {
+                document.getElementById("winMessage").innerText = "🎉 You Win! Redirecting back...";
+                setTimeout(() => {
+                    window.location.href = "../assets/games2.html";
+                }, 5000);
+            }
+        }
+    </script>
+</body>
+</html>

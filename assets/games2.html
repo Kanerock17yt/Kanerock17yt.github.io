@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classified Games Vault</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+    <div class="page-shell">
+        <!-- PASSWORD GATE -->
+        <div id="authGate" class="vault-box">
+            <p class="eyebrow" style="margin-bottom: 10px;">Restricted Area</p>
+            <h2>🔒 Classified Vault</h2>
+            <p style="color: var(--muted); font-size: 0.95rem;">Enter the decryption key to access games2.html</p>
+            <p style="font-size: 11px; color: #94a3b8; margin-top: 4px;">(Hint: Check your browser console!)</p>
+            <input type="text" id="passInput" placeholder="Enter password...">
+            <br>
+            <button onclick="checkPassword()">Unlock Vault</button>
+        </div>
+
+        <!-- SECRET GAMES CONTENT -->
+        <div id="vaultContent" class="hidden">
+            <header class="hero">
+                <div class="brand-block">
+                    <p class="eyebrow">Secure Access Granted</p>
+                    <h1>Secret Games Vault</h1>
+                    <p class="subtitle">Welcome operator. Choose a classified sub-site below.</p>
+                </div>
+            </header>
+
+            <main class="container">
+                <a href="../sub websites/cookie.html" class="nav-button">
+                    Cookie Clicker
+                    <span>Bake cookies (or capybaras)</span>
+                </a>
+                <a href="../sub websites/soundboard.html" class="nav-button">
+                    Sound Board
+                    <span>Generate retro audio frequencies</span>
+                </a>
+                <a href="../sub websites/bread.html" class="nav-button">
+                    Eat Bread
+                    <span>Devour 5 slices to win</span>
+                </a>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const randomNum = Math.floor(1000 + Math.random() * 9000);
+        const secretPassword = "vault" + randomNum;
+        const encodedPassword = btoa(secretPassword);
+
+        console.log("%c[SYSTEM ACCESS HINT]", "color: #ef4444; font-weight: bold; font-size: 14px;");
+        console.log("Your encoded password string is: " + encodedPassword);
+        console.log("Type atob('" + encodedPassword + "') in this console to decode your password!");
+
+        function checkPassword() {
+            const userInput = document.getElementById("passInput").value;
+            if (userInput === secretPassword) {
+                document.getElementById("authGate").style.display = "none";
+                document.getElementById("vaultContent").style.display = "block";
+            } else {
+                alert("Incorrect password! Check the console.");
+            }
+        }
+    </script>
+</body>
+</html>

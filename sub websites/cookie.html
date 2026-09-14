@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookie Clicker</title>
+    <style>
+        body { background: #0f172a; color: #f8fafc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; margin: 0; padding: 40px; }
+        .game-shell { background: rgba(15, 23, 42, 0.72); border: 1px solid rgba(148, 163, 184, 0.22); border-radius: 28px; padding: 30px; max-width: 450px; margin: 0 auto; box-shadow: 0 30px 80px rgba(15, 23, 42, 0.45); }
+        #cookieObj { font-size: 100px; cursor: pointer; user-select: none; transition: transform 0.1s; display: inline-block; margin: 20px 0; }
+        #cookieObj:active { transform: scale(0.9); }
+        .duo-box { margin-top: 15px; padding: 10px; background: rgba(30, 41, 59, 0.6); border-radius: 12px; font-size: 0.85rem; color: #cbd5e1; }
+        a { display: inline-block; margin-top: 20px; color: #cbd5e1; text-decoration: none; font-size: 0.9rem; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="game-shell">
+        <h1 id="titleText">Cookie Clicker</h1>
+        <div id="cookieObj" onclick="addClicks(1)">🍪</div>
+        <h2>Count: <span id="cookieCount">0</span></h2>
+        
+        <div class="duo-box">
+            💡 <b>Duo Button Mode:</b> Press <b>Space</b> + <b>Up Arrow</b> at the same time for extra clicks!
+        </div>
+
+        <br>
+        <a href="../assets/games2.html">← Back to Secret Vault</a>
+    </div>
+
+    <script>
+        let cookies = 0;
+        let keysPressed = {};
+
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('cappy')) {
+            document.getElementById("cookieObj").innerText = "🦫";
+            document.getElementById("titleText").innerText = "Cappy Clicker";
+        }
+
+        function addClicks(amount) {
+            cookies += amount;
+            document.getElementById("cookieCount").innerText = cookies;
+        }
+
+        // Duo button listener for Space + Up Arrow combination
+        window.addEventListener("keydown", (e) => {
+            keysPressed[e.code] = true;
+            if (keysPressed["Space"] && keysPressed["ArrowUp"]) {
+                e.preventDefault();
+                addClicks(5); // Gives 5 bonus clicks when triggered together!
+            }
+        });
+
+        window.addEventListener("keyup", (e) => {
+            keysPressed[e.code] = false;
+        });
+    </script>
+</body>
+</html>
